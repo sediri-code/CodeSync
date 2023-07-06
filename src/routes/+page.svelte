@@ -54,7 +54,7 @@
 			<h2>My Code Snippets</h2>
 		 </div>
          {#each $snippetStore as snippet,index}
-		 <CodeSnippetCard/>
+		 <CodeSnippetCard snippet = {snippet} index={index}/>
 		 {/each}
 	</div>
 
