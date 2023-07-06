@@ -15,4 +15,14 @@ interface CodeSnipperInput {
 }
 
 
+interface CodeSnippet
+{
+    title:string
+    language:string
+    code: string
+    favorite: boolean
+}
+
+//userCreated : User, createdOn: string (example)
+
 

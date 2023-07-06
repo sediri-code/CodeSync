@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeSnippetCard from "../CodeSnippetCard.svelte";
+	import { snippetStore } from "../SnippetStore";
 
 	let formData : CodeSnipperInput = {
 		title: "",
@@ -7,6 +8,21 @@
 		code: "",
 	}
 	//createSnippet (input: CodeSnippetInput)
+	snippetStore.set(
+	[ 
+	 { title: "Ahmed Sediri",
+	  language: "html",
+	  code: `<h1> Hello </h1>`,
+	  favorite: false
+	 },
+	 { title: "Ahmed Sediri",
+	  language: "html",
+	  code: `<h1> Hello </h1>`,
+	  favorite: false
+	 }
+
+	]
+	)
 	//SnipetStore -> a local writable that allows us to store code snippets
 	// create / deleted snippets
 	//favorite snipets
@@ -37,8 +53,9 @@
 		 <div class = "text-center py-6">
 			<h2>My Code Snippets</h2>
 		 </div>
-
+         {#each $snippetStore as snippet,index}
 		 <CodeSnippetCard/>
+		 {/each}
 	</div>
 
 </div>
